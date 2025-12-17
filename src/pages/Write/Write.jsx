@@ -26,6 +26,8 @@ export default function Write() {
       <div
         style={{
           width: "25%",
+          margin:"auto",
+          marginBlock:"20px",
           display: "flex",
           flexDirection: "column",
           gap: "10px",
@@ -33,6 +35,7 @@ export default function Write() {
           borderRadius: "10px",
           alignItems: "space-between",
           backgroundColor: "beige",
+          boxShadow: "2px 2px 15px  gray"
         }}
       >
         <input
@@ -51,7 +54,14 @@ export default function Write() {
             setInputValue2(e.target.value);
           }}
         />
-        <button style={{ padding: "10px" }} onClick={saveData}>
+        <button   style={{
+          color: "white",
+          padding:"5px",
+          backgroundColor: "black",
+          fontSize: "1rem",
+          cursor: "pointer",
+          borderRadius: "7px",
+        }} onClick={saveData}>
           saveData
         </button>
       </div>

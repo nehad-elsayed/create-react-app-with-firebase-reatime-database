@@ -24,9 +24,9 @@ export default function Read() {
         style={{
           color: "white",
           backgroundColor: "black",
-          fontSize: "1.5rem",
+          fontSize: "1rem",
           cursor: "pointer",
-          borderRadius: "5px",
+          borderRadius: "7px",
         }}
       >
         click here to display
