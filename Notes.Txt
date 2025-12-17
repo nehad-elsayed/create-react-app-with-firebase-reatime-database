@@ -1,0 +1,43 @@
+snapshot : is a screenshot of the data which exist in realtime database
+
+we use snapshot.exists to ensure that the snapshot is not empty
+
+we  use the snapshot.val() => to get the values in the snapshot 
+
+
+
+we use object.values here like this =>
+   const snapshot = await get(dbRef);
+    if (snapshot.exists) {
+      setFruitsMenu(Object.values(snapshot.val()));
+    }
+
+    =>because the data comes as js object not array so we should convert it  to array 
+
+
+
+The difference between js object and the array :
+
+js object =>
+{
+"fruit1Id":{
+    fruitName: "apple",
+    fruitDefinition:" a red fruit"
+}
+"fruit2Id":{
+    fruitName:"strawberry",
+    fruitDefinition:"small and red"
+}
+
+}
+
+
+but after we use object.values( ) the shape becomes without Id =>
+
+[
+    {fruitName:"apple",
+    fruitDefinition:"a red fruit"},
+
+    {fruitName:"strawberry",
+    fruitDefinition:"small and red"}
+]
