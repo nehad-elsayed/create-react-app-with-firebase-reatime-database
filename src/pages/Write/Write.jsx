@@ -9,16 +9,20 @@ export default function Write() {
   async function saveData() {
     const db = getDatabase(app);
     const newDocRef = push(ref(db, "nature/fruits"));
-    set(newDocRef, {
-      fruitName: inputValue1,
-      fruitDefinition: inputValue2,
-    })
-      .then(() => {
-        alert("saved successfully");
+    if (inputValue1 != "" && inputValue2 != "") {
+      set(newDocRef, {
+        fruitName: inputValue1,
+        fruitDefinition: inputValue2,
       })
-      .catch((error) => {
-        alert("failed and error is", error);
-      });
+        .then(() => {
+          alert("saved successfully");
+        })
+        .catch((error) => {
+          alert("failed and error is", error);
+        });
+    } else {
+      alert("fill the inputs first");
+    }
   }
 
   return (
@@ -26,8 +30,8 @@ export default function Write() {
       <div
         style={{
           width: "25%",
-          margin:"auto",
-          marginBlock:"20px",
+          margin: "auto",
+          marginBlock: "20px",
           display: "flex",
           flexDirection: "column",
           gap: "10px",
@@ -35,7 +39,7 @@ export default function Write() {
           borderRadius: "10px",
           alignItems: "space-between",
           backgroundColor: "beige",
-          boxShadow: "2px 2px 15px  gray"
+          boxShadow: "2px 2px 15px  gray",
         }}
       >
         <input
@@ -54,14 +58,17 @@ export default function Write() {
             setInputValue2(e.target.value);
           }}
         />
-        <button   style={{
-          color: "white",
-          padding:"5px",
-          backgroundColor: "black",
-          fontSize: "1rem",
-          cursor: "pointer",
-          borderRadius: "7px",
-        }} onClick={saveData}>
+        <button
+          style={{
+            color: "white",
+            padding: "5px",
+            backgroundColor: "black",
+            fontSize: "1rem",
+            cursor: "pointer",
+            borderRadius: "7px",
+          }}
+          onClick={saveData}
+        >
           saveData
         </button>
       </div>
