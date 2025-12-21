@@ -1,6 +1,7 @@
 import { useState } from "react";
 import app from "../../firebase/firebaseConfig";
 import { ref, push, set, getDatabase } from "firebase/database";
+import toast from "react-hot-toast";
 
 export default function Write() {
   const [inputValue1, setInputValue1] = useState("");
@@ -15,13 +16,13 @@ export default function Write() {
         fruitDefinition: inputValue2,
       })
         .then(() => {
-          alert("saved successfully");
+          toast.success("saved successfully");
         })
         .catch((error) => {
-          alert("failed and error is", error);
+          toast.error(`failed and error is ${error}`);
         });
     } else {
-      alert("fill the inputs first");
+      toast.error("fill the inputs first");
     }
   }
 
