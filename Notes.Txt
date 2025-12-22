@@ -41,3 +41,12 @@ but after we use object.values( ) the shape becomes without Id =>
     {fruitName:"strawberry",
     fruitDefinition:"small and red"}
 ]
+
+
+after we use object.keys() the result will contains only id =>
+
+
+[
+  "-OgU8VngMhdZrqPnGKab",
+  "-OgU8-2LfC5vB8PDLsEn"
+]

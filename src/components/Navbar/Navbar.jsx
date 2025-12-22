@@ -24,6 +24,11 @@ export default function Navbar() {
             WriteNewData
           </Link>
         </li>
+        <li>
+          <Link to="/update" onClick={() => setOpen(false)}>
+            UpdateData
+          </Link>
+        </li>
       </ul>
     </nav>
   );

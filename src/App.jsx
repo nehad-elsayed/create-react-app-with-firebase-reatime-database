@@ -4,6 +4,8 @@ import Write from "./pages/Write/Write";
 import NotFound from "./pages/NotFound/NotFound";
 import Read from "./pages/Read/Read";
 import { Toaster } from "react-hot-toast";
+import UpdateRead from "./pages/UpdateRead/UpdateRead";
+import UpdateWrite from "./pages/UpdateWrite/UpdateWrite";
 
 function App() {
   const routes = createBrowserRouter([
@@ -14,6 +16,8 @@ function App() {
         { path: "/", element: <Write /> },
         { path: "/*", element: <NotFound /> },
         { path: "/read", element: <Read /> },
+        { path: "/update", element: <UpdateRead /> },
+        { path: "/updatewrite/:fruitId", element: <UpdateWrite /> },
       ],
     },
   ]);
